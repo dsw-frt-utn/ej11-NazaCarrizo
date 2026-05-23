@@ -1,5 +1,4 @@
 ﻿using Dsw2026Ej11.Domain;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Dsw2026Ej11.Collections;
 
@@ -49,9 +48,11 @@ public class CasoLinq
 
     public Libro? GetMayorPrecio() => _libros.MaxBy(x => x.Precio);
 
-    public Libro? GetMenorPrecio() => _libros.MaxBy(x => x.Precio);
+    public Libro? GetMenorPrecio() => _libros.MinBy(x => x.Precio);
 
     public IEnumerable<Libro> GetMayorPromedio() => _libros.Where(x => x.Precio > _libros.Average(p => p.Precio));
+
+    public IEnumerable<Libro> GetLibrosOrdenadosDesc() => _libros.OrderByDescending(x => x.Titulo);
 
 
 }
