@@ -47,7 +47,7 @@ public class CasoList
         return null;
     }
 
-    public bool BorrarAlumno(Alumno alu)
+    public bool BorrarAlumno(Alumno? alu)
     {
         if (alu == null) return false;
 
