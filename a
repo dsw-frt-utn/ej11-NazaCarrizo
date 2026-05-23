@@ -1,0 +1,24 @@
+[1mdiff --git a/Dsw2026Ej11/Collections/CasoLinq.cs b/Dsw2026Ej11/Collections/CasoLinq.cs[m
+[1mindex 3982298..be4e1a2 100644[m
+[1m--- a/Dsw2026Ej11/Collections/CasoLinq.cs[m
+[1m+++ b/Dsw2026Ej11/Collections/CasoLinq.cs[m
+[36m@@ -1,5 +1,4 @@[m
+ ﻿using Dsw2026Ej11.Domain;[m
+[31m-using System.Security.Cryptography.X509Certificates;[m
+ [m
+ namespace Dsw2026Ej11.Collections;[m
+ [m
+[36m@@ -49,10 +48,12 @@[m [mpublic class CasoLinq[m
+ [m
+     public Libro? GetMayorPrecio() => _libros.MaxBy(x => x.Precio);[m
+ [m
+[31m-    public Libro? GetMenorPrecio() => _libros.MaxBy(x => x.Precio);[m
+[32m+[m[32m    public Libro? GetMenorPrecio() => _libros.MinBy(x => x.Precio);[m
+ [m
+     public IEnumerable<Libro> GetMayorPromedio() => _libros.Where(x => x.Precio > _libros.Average(p => p.Precio));[m
+ [m
+[32m+[m[32m    public IEnumerable<Libro> GetLibrosOrdenadosDesc() => _libros.OrderByDescending(x => x.Titulo);[m
+[32m+[m
+ [m
+ }[m
+ [m

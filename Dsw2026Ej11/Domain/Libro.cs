@@ -49,4 +49,9 @@ public class Libro
             new Libro(30, "Cloud Computing", 62000)
         };
     }
+
+    public override string ToString()
+    {
+        return $"ID: {Id}-Titulo: {Titulo}-Precio: {Precio}";
+    }
 }
